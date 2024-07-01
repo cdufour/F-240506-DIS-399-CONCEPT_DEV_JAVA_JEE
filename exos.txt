@@ -1,0 +1,7 @@
+*** EXOS ***
+
+1. Ajouter à votre service DemoWebService:
+- une opération permettant d'obtenir un entier aléatoire compris entre min et max.
+min et max seront fournis en entrée par le message client.
+- une opération permettant d'obtenir un chaîne de caractère aléatoire de longueur n.
+n sera fournie entrée par le message client.
