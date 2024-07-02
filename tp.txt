@@ -1,0 +1,45 @@
+*** TP ***
+
+Ecrire un service web en Java (jax-rs/jersey) offrant les fonctionnalités suivantes:
+
+1. CRUD sur une ressource User
+Notre système doit gérer une ressource User ayant les propriété suivantes:
+- int id
+- String firstName
+- String lastName
+- String email
+- String password
+- boolean isPremium
+
+Le service web exposera des routes conformes à l'approche REST afin d'effectuer des opératons de type CRUD sur la ressource.
+
+Option 1 (facultative)
+Le mot de passe devra être enregistré "haché" en format MD5
+
+Option 2 (facultative)
+Le service refusera d'enregistrer un utilisateur dont le mot de passe n'est pas assez fort et renverra un
+message (json) au client afin de lui notifier ce refus.
+Règles d'un mot de passe fort:
+- longueur minimum de 12 caractères
+- doit contenir au moins un chiffre au moins
+- doit contenur au moins une majuscule
+- doit contenir au moins un caractères spécial
+
+Les utilisateurs pourront être, au choix:
+- stockés en mémoire (via une classe Database par exemple, comme dans ce tuto: https://youtu.be/UXdoBGLDnRg?si=4b7VKn6NUyis4k3L)
+- stockés dans une base de données MySql (en intégrant Hibernate et un connecteur SQL au projet)
+
+
+2. Sécurité
+Le service offira en outre des points d'accès (endpoints) permettant de:
+
+2.1 générer un mot de passe aléatoire (chaîne alphanumérique). 
+Le corps (json) d'une requête en POST fournira les inputs suivants:
+    - longeur du mot de passe souhaité
+    - présence ou non de caractères spéciaux
+Un message json sera renvoyé au client pour lui retourner le mot de passe généré
+2.2 identifier un utilisateur
+Le corps (json) d'une requête en POST fournira les inputs suivants:
+    - email de l'utilisateur
+    - mot de passe de l'utilisateur
+Un message json sera renvoyé au client pour lui indiquer sur l'accès est autorisé ou non
