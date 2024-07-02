@@ -30,7 +30,7 @@ Les utilisateurs pourront être, au choix:
 - stockés dans une base de données MySql (en intégrant Hibernate et un connecteur SQL au projet)
 
 
-2. Sécurité
+2. Sécurité (option facultative)
 Le service offira en outre des points d'accès (endpoints) permettant de:
 
 2.1 générer un mot de passe aléatoire (chaîne alphanumérique). 
